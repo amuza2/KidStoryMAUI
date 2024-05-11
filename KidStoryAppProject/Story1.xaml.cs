@@ -101,10 +101,11 @@ public partial class Story1 : ContentPage
     };
 
     string[] imagesStory1 = { "aa", "bb", "cc", "dd", "ee", "ff" };
-    string[] imagesStory2 = { "s2a", "s2b", "s2c", "s2d", "s2e", "s2f" };
+    string[] imagesStory2 = { "s2a", "s2b", "s2c", "s2d", "s2e", "s2e", "s2f" };
     string[] imagesStory3 = { "s3a", "s3b", "s3c", "s3d", "s3e", "s3f" };
-    string[] choosedStoryContent = null;
+    string[] choosedStoryContent = {};
 	int page = 0;
+    string[] images = [];
     string title;
 	public Story1(string storyButton)
 	{
@@ -121,16 +122,28 @@ public partial class Story1 : ContentPage
     }
 	private void chooseContent(string story)
 	{
-		if (story == "الأرنب والسلحفاة") choosedStoryContent = story1;
-		else if (story == "ليلي والذئب") choosedStoryContent = story2;
-		else if (story == "النملة والصرصور") choosedStoryContent = story3;
+		if (story == "الأرنب والسلحفاة")
+        {
+            choosedStoryContent = story1;
+            images = imagesStory1;
+        }
+		else if (story == "ليلي والذئب")
+        {
+            choosedStoryContent = story2;
+            images = imagesStory2;
+        }
+		else if (story == "النملة والصرصور")
+        {
+            choosedStoryContent = story3;
+            images = imagesStory3;
+        }
     }
 	private void GenerateContent()
 	{
 		if(page != choosedStoryContent.Length)
 		{
 			lblStoryText.Text = choosedStoryContent[page];
-            img.Source = $"{imagesStory1[page]}.png";
+            img.Source = $"{images[page]}.png";
 		}
 	}
 
@@ -141,7 +154,7 @@ public partial class Story1 : ContentPage
             if(page < choosedStoryContent.Length - 1) page++;
             lblStoryText.Text = choosedStoryContent[page];
             Paging();
-            img.Source = $"{imagesStory1[page]}.png";
+            img.Source = $"{images[page]}.png";
         }
         // hide next button in the last page
         if(page == choosedStoryContent.Length - 1)
@@ -158,7 +171,7 @@ public partial class Story1 : ContentPage
             page--;
             lblStoryText.Text = choosedStoryContent[page];
             Paging();
-            img.Source = $"{imagesStory1[page]}.png";
+            img.Source = $"{images[page]}.png";
         }
         // hide before button
         if (page == 0) btnBefore.IsVisible = false;
