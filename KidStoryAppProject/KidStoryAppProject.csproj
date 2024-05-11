@@ -87,6 +87,12 @@
 	  <MauiImage Include="Resources\Images\Story1\dd.png" />
 	  <MauiImage Include="Resources\Images\Story1\ee.png" />
 	  <MauiImage Include="Resources\Images\Story1\ff.png" />
+	  <MauiImage Include="Resources\Images\Story2\s2a.png" />
+	  <MauiImage Include="Resources\Images\Story2\s2b.png" />
+	  <MauiImage Include="Resources\Images\Story2\s2c.png" />
+	  <MauiImage Include="Resources\Images\Story2\s2d.png" />
+	  <MauiImage Include="Resources\Images\Story2\s2e.png" />
+	  <MauiImage Include="Resources\Images\Story2\s2f.png" />
 	</ItemGroup>
 
 </Project>
