@@ -113,6 +113,7 @@ public partial class Story1 : ContentPage
         title = storyButton;
 		lblStoryTitle.Text = $"{(page+1)}/{choosedStoryContent.Length}{title}";
 		GenerateContent();
+        if (page == 0) btnBefore.IsVisible = false;
     }
     private void Paging()
     {
@@ -142,6 +143,12 @@ public partial class Story1 : ContentPage
             Paging();
             img.Source = $"{imagesStory1[page]}.png";
         }
+        // hide next button in the last page
+        if(page == choosedStoryContent.Length - 1)
+            btnAfter.IsVisible = false;
+        // show before button on page 1
+        if(page == 1) btnBefore.IsVisible = true;
+
     }
 
     private void BeforeButton_Clicked(object sender, EventArgs e)
@@ -153,5 +160,9 @@ public partial class Story1 : ContentPage
             Paging();
             img.Source = $"{imagesStory1[page]}.png";
         }
+        // hide before button
+        if (page == 0) btnBefore.IsVisible = false;
+        // show after button
+        if (!btnAfter.IsVisible) btnAfter.IsVisible = true;
     }
 }
