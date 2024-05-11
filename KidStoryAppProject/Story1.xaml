@@ -28,10 +28,12 @@
             </Frame>
             <HorizontalStackLayout Spacing="20"
                                    HorizontalOptions="Center">
-                <Button Text="قبل"
+                <Button x:Name="btnBefore"
+                        Text="قبل"
                         Clicked="BeforeButton_Clicked"
                         WidthRequest="100"/>
-                <Button Text="تالي"
+                <Button x:Name="btnAfter"
+                        Text="تالي"
                         Clicked="NextButton_Clicked"
                         WidthRequest="100"/>
             </HorizontalStackLayout>

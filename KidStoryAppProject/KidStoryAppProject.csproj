@@ -81,7 +81,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Resources\Images\Story1\" />
+	  <MauiImage Include="Resources\Images\Story1\aa.png" />
+	  <MauiImage Include="Resources\Images\Story1\bb.png" />
+	  <MauiImage Include="Resources\Images\Story1\cc.png" />
+	  <MauiImage Include="Resources\Images\Story1\dd.png" />
+	  <MauiImage Include="Resources\Images\Story1\ee.png" />
+	  <MauiImage Include="Resources\Images\Story1\ff.png" />
 	</ItemGroup>
 
 </Project>
