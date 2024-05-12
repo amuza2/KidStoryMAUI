@@ -102,7 +102,7 @@ public partial class Story1 : ContentPage
 
     string[] imagesStory1 = { "aa", "bb", "cc", "dd", "ee", "ff" };
     string[] imagesStory2 = { "s2a", "s2b", "s2c", "s2d", "s2e", "s2e", "s2f" };
-    string[] imagesStory3 = { "s3a", "s3b", "s3c", "s3d", "s3e", "s3f" };
+    string[] imagesStory3 = { "s3a", "s3b", "s3c", "s3d", "s3f", "s3g", "s3h", "s3j", "s3k", "s3k1", "s3m" };
     string[] choosedStoryContent = {};
 	int page = 0;
     string[] images = [];
