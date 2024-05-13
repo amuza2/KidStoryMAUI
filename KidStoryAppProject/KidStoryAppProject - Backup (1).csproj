@@ -56,6 +56,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\aa.png" />
+	  <None Remove="Resources\Images\bb.png" />
+	  <None Remove="Resources\Images\cc.png" />
+	  <None Remove="Resources\Images\dd.png" />
+	  <None Remove="Resources\Images\ee.png" />
+	  <None Remove="Resources\Images\ff.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
@@ -98,7 +107,8 @@
 	  <MauiImage Include="Resources\Images\Story3\s3k1.png" />
 	  <MauiImage Include="Resources\Images\Story3\s3m.png" />
 	  
-	  <MauiImage Include="Resources\Images\icons\speaker.png" />
+	  <MauiImage Include="Resources\Images\icons\s3m.png" />
+	  
 	</ItemGroup>
 
 </Project>

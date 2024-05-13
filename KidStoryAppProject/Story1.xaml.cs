@@ -1,4 +1,5 @@
-﻿namespace KidStoryAppProject;
+﻿
+namespace KidStoryAppProject;
 
 public partial class Story1 : ContentPage
 {
@@ -107,6 +108,8 @@ public partial class Story1 : ContentPage
 	int page = 0;
     string[] images = [];
     string title;
+    Locale arabicVoice;
+    CancellationTokenSource speech;
 	public Story1(string storyButton)
 	{
 		InitializeComponent();
@@ -115,6 +118,12 @@ public partial class Story1 : ContentPage
 		lblStoryTitle.Text = $"{(page+1)}/{choosedStoryContent.Length}{title}";
 		GenerateContent();
         if (page == 0) btnBefore.IsVisible = false;
+    }
+    protected async override void OnAppearing()
+    {
+        base.OnAppearing();
+        IEnumerable<Locale> locals = await TextToSpeech.GetLocalesAsync();
+        arabicVoice = locals.Single(v => v.Name == "Arabic");
     }
     private void Paging()
     {
@@ -177,5 +186,24 @@ public partial class Story1 : ContentPage
         if (page == 0) btnBefore.IsVisible = false;
         // show after button
         if (!btnAfter.IsVisible) btnAfter.IsVisible = true;
+    }
+
+    private async void btnSpeaker_Clicked(object sender, EventArgs e)
+    {
+        if(speech != null)
+        {
+            speech.Cancel();
+            speech.Dispose();
+            speech = null;
+        }
+        else
+        {
+            speech = new CancellationTokenSource();
+            await TextToSpeech.Default.SpeakAsync(choosedStoryContent[page], new SpeechOptions
+            {
+                Locale = arabicVoice
+            }, cancelToken: speech.Token);
+
+        }
     }
 }
