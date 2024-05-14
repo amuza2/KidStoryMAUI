@@ -9,11 +9,19 @@
             <Frame Padding="10"
                    BackgroundColor="LightSkyBlue"
                    BorderColor="Transparent">
-                <Label x:Name="lblStoryTitle"
-                       Text="Welcome to .NET MAUI!"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center"
-                       FontSize="40"/>
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <Label x:Name="lblStoryTitle"
+                           Text="Welcome to .NET MAUI!"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           FontSize="40"/>
+                    <ImageButton x:Name="btnSpeaker"
+                                 Source="speaker.png"
+                                 WidthRequest="50"
+                                 HeightRequest="50"
+                                 Clicked="btnSpeaker_Clicked"
+                                 />
+                </HorizontalStackLayout>
             </Frame>
 
             <Image x:Name="img"
