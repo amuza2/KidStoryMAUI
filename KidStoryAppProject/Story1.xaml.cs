@@ -164,6 +164,10 @@ public partial class Story1 : ContentPage
             lblStoryText.Text = choosedStoryContent[page];
             Paging();
             img.Source = $"{images[page]}.png";
+            if (speech != null)
+            {
+                CancelSpeech();
+            }
         }
         // hide next button in the last page
         if(page == choosedStoryContent.Length - 1)
@@ -181,20 +185,22 @@ public partial class Story1 : ContentPage
             lblStoryText.Text = choosedStoryContent[page];
             Paging();
             img.Source = $"{images[page]}.png";
+            if (speech != null)
+            {
+                CancelSpeech();
+            }
         }
         // hide before button
         if (page == 0) btnBefore.IsVisible = false;
         // show after button
         if (!btnAfter.IsVisible) btnAfter.IsVisible = true;
     }
-
+    // text to speech feature
     private async void btnSpeaker_Clicked(object sender, EventArgs e)
     {
         if(speech != null)
         {
-            speech.Cancel();
-            speech.Dispose();
-            speech = null;
+            CancelSpeech();
         }
         else
         {
@@ -203,7 +209,20 @@ public partial class Story1 : ContentPage
             {
                 Locale = arabicVoice
             }, cancelToken: speech.Token);
-
         }
+    }
+    private void CancelSpeech()
+    {
+        speech.Cancel();
+        speech.Dispose();
+        speech = null;
+    }
+    protected override bool OnBackButtonPressed()
+    {
+        if (speech != null)
+        {
+            CancelSpeech();
+        }
+        return base.OnBackButtonPressed();
     }
 }
