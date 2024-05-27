@@ -32,7 +32,8 @@
                    BorderColor="Transparent">
                 <Label x:Name="lblStoryText"
                        Text="..........."
-                       FontSize="18"/>
+                       FontSize="18"
+                       HorizontalTextAlignment="End"/>
             </Frame>
             <HorizontalStackLayout Spacing="20"
                                    HorizontalOptions="Center">
