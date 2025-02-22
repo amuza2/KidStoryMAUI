@@ -124,7 +124,7 @@ public partial class Story1 : ContentPage
         base.OnAppearing();
         IEnumerable<Locale> locals = await TextToSpeech.GetLocalesAsync();
         arabicVoice = locals.Single(v => v.Name == "Arabic");
-    }
+	}
     private void Paging()
     {
         lblStoryTitle.Text = $"{(page + 1)}/{choosedStoryContent.Length}{title}";
@@ -223,6 +223,6 @@ public partial class Story1 : ContentPage
         {
             CancelSpeech();
         }
-        return base.OnBackButtonPressed();
+		return true;
     }
 }
