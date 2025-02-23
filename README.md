@@ -48,4 +48,4 @@
    - I used my smartphone (plunged in with wire) to run it but you can use the Visual Studio emulator after installing it too.
    
 ## Note
-# This app is still in development.
+- This app is still in development.
